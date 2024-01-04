@@ -1,0 +1,75 @@
+**QUE É REACT ROUTER?**
+É um dos pacotes mais utilizados para criar uma estrutura de rotas em aplicações de React:
+Ou seja, permite que nossas "SPAs" tenham múltiplas páginas, sendo próprio do REACT;
+Precisamos instalar no nosso projeto, as configurações para utilização.
+Também temos outras funções como: "Redirect, Nested Routes, Not Found Routes(404)" e outros.
+
+COMEÇAR:
+Para configurar o React Router é necessário ter que importar três elementos de react-router-dom:
+-BrowserRouter: irá definir onde a área do nosso app que vai trocar as páginas;
+-Routes: define as rotas;
+-Route: um elemento deste para cada rota, configurar com path componente da rota.'
+
+# 👇️ with NPM
+
+npm install react-router-dom
+npm i json-server // para executar: npm run server
+
+# 👇️ ONLY If you use TypeScript
+
+npm install --save-dev @types/react-router-dom
+
+{/_ Elementros fora do ROUTES , /\, serão repetidos em todas as páginas, mas tudo dentro irá ser novo. _/}
+<BrowserRouter>
+<Routes>
+{/_ Esse "Route" irá exibir no caso o conteudo dentro do arquivo Home.js _/}
+<Route path="/" element={<Home />} />
+<Route path="/about" element={<About />} />
+</Routes>
+</BrowserRouter>
+
+---
+
+---
+
+---
+
+**_ADICIONANDO LINKS_**
+Para navergar entre as páginas é necessário utilizar o "Link" do React Router. Esse link é configurado com o parâmetro "to", que receber a URL/path que será redirecionado quando clicar no link.
+Exemplo:
+
+Criar um arquivo:
+
+import { Link } from "react-router-dom";
+
+export function Navbar() {
+return (
+<nav>
+<Link to="/">Home - Link</Link>
+{/_ Esse cara de cima /\ é semelhante com esse\/ _/}
+{/_ <a href="/">Home - a</a> _/}
+{/_ Porem o "Link" faz o direcionamento sem fazer o RELOAD DA PAGINA, trocando somento os componentes. _/}
+<Link to="/about">About Me</Link>
+</nav>
+);
+}
+
+{/_ Elementros fora do ROUTES , /\, serão repetidos em todas as páginas, mas tudo dentro irá ser novo. _/}
+<BrowserRouter>
+{/_ Por se repetir mas tendo elementos do REACT-ROUTER é necessário colocar dentro do BrowserRouter _/}
+<Navbar />
+<Routes>
+{/_ Esse "Route" irá exibir no caso o conteudo dentro do arquivo Home.js _/}
+<Route path="/" element={<Home />} />
+<Route path="/about" element={<About />} />
+</Routes>
+</BrowserRouter>
+
+---
+
+---
+
+---
+***CARREGANDO DADOS***
+Usando o HOOK com useFetch, para ser possível utilizá-los para carregamento de dados individuais. Utilizando o HOOK igual ao da última seção e vamos imprimir os produtos na Home da mesma forma.
+Exemplo:
