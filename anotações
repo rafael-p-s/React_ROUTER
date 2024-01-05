@@ -72,4 +72,62 @@ return (
 ---
 ***CARREGANDO DADOS***
 Usando o HOOK com useFetch, para ser possível utilizá-los para carregamento de dados individuais. Utilizando o HOOK igual ao da última seção e vamos imprimir os produtos na Home da mesma forma.
-Exemplo:
+---
+
+---
+
+---
+***ROTA DINÂMICA***
+Para criar uma rota dinâmica vamos precisar definir uma "nova Route" em "App.js", que deve ter o padrão de: "/products/:id".
+Sendo ":id" o dado dinâmico,ou seja, podemos ter qualquer valor;
+Na pg podemos utilizar o hook "useParams" para resgatar esta informação;
+---
+
+---
+
+---
+**CARREGAMENTO DE DADO INDIVIDUAL**
+Devido ao **CARREGAMENTO INDIVIDUAL**, será utilizado o id recebido para formar a nova URL. Sendo que por fim podemos utiliza o hook "useFetch" para trazer o item.
+Fazendo por fim a validação e ipressão do mesmo no JSX;
+---
+
+---
+
+---
+**NESTED ROUTE**
+As "nested routes" indicam "URLs mais complexas, como: "/products:id/something". Que neste caso vamos precisar criar um componente que corresponde com o padrão indicado e também a URL em App.js.
+Na nested route teremos o acesso ao parâmetro da ULR.
+---
+
+---
+
+---
+**NO MATCH ROUTE(404)**
+É possível criar uma pg404 facilmente com o React Router. Basta criarmos o componente da pg.
+E no arquivo App.js definir um path como *. Desta maneira, qualquer rota que não exista cairá neste componente.
+---
+
+---
+
+---
+**LINK ATIVO**
+Para ter fácil acesso a uma modificação para os links atvos vamos trocar o link pelo NavLink.
+Neste elemento temos acesso a um valor chamado "isActive".
+Podemos ativar uma classe se a rota atual for a que está no atributo "to".
+---
+
+---
+
+---
+**SEARCH PARAMS**
+"Search Params" é um recurso que permite obter o que vem na URL em forma de parâmetro, ex: produtos?q=camisa.
+Utiliza o hook "useSearchParams" para obtê-los, com este recurso fica simples fazer uma funcionalidade de busa no sistea.
+---
+
+---
+
+---
+**REDIRECT**
+Pode vir a precisar de um redirecionamento e páginas eventualmente.
+Exemplo: uma pg antiga do sistema responde agora a uma nova URL.
+Para que isso ocorra é necessário criar a roa ROUTE normalmente, mas, em "element" vamos utilizar o componente Navigate com um "to" que vai para a rota correta.
